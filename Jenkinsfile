@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('echo') {
       steps {
-        sh 'echo 123'
+        withEnv(['JENKINS_NODE_COOKIE=dontkillme']) {
+          sh 'echo 2222222'
+        }
       }
     }
 
